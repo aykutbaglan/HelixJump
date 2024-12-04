@@ -6,18 +6,15 @@ public class CircleManager : MonoBehaviour
 {
     [SerializeField] private GameObject piecePrefab;
     [SerializeField] private CircleController circlePrefab;
-
-    private const float FullAngle = 360;
-
     [SerializeField] private int editorCreateCircleAmount;
     [SerializeField] private float verticalDistance;
+    private const float FullAngle = 360;
 
     [ContextMenu(nameof(EditorCreate))]
     public void EditorCreate()
     {
         Create(editorCreateCircleAmount);
     }
-
     private void Create(int amount)
     {
         for (int i = 0; i < amount; i++)
@@ -28,7 +25,6 @@ public class CircleManager : MonoBehaviour
             current.PrepareSimple(random);
         }
     }
-
     private GameObject CreateCircleFromPiece()
     {
         var parent = new GameObject()
@@ -43,7 +39,6 @@ public class CircleManager : MonoBehaviour
             rotation.eulerAngles = new Vector3(0, (FullAngle / amount) * i, 0);
             current.transform.rotation = rotation;
         }
-
         return parent;
     }
 }

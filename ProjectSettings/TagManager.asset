@@ -8,6 +8,7 @@ TagManager:
   - die
   - points
   - win
+  - ball
   layers:
   - Default
   - TransparentFX

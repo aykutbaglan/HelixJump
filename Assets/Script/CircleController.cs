@@ -19,14 +19,10 @@ public class CircleController : MonoBehaviour
             if (index >= pieces.Count)
                 index = 0;
         }
-       
     }
-
     public void UpdateScore()
     {
         score += 10;
         scoreText.text = "Score: " + score;
     }
-
-    
 }
