@@ -9,6 +9,7 @@ public class StartState : State
     [SerializeField] private ScoreCanvas scoreCanvas;
     [SerializeField] private StateMachine stateMachine;
 
+
     private void OnEnable()
     {
         startButton.onClick.AddListener(OnStartButtonClicked);
@@ -20,6 +21,7 @@ public class StartState : State
     public override void OnEnter()
     {
         base.OnEnter();
+        base.ballController.RBActiveControl(false);
     }
     public override void OnExit()
     {

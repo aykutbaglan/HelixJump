@@ -12,6 +12,7 @@ public class EndingState : State
     public override void OnEnter()
     {
         base.OnEnter();
+        base.ballController.RBActiveControl(false);
     }
     public override void OnExit()
     {

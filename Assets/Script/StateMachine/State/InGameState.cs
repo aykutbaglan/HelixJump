@@ -9,6 +9,7 @@ public class InGameState : State
     public override void OnEnter()
     {
         base.OnEnter();
+        base.ballController.RBActiveControl(true);
     }
     public override void OnExit()
     {
