@@ -31,8 +31,6 @@ public class StartState : State
     {
         PlayerPrefs.SetInt("isGameStarted",1);
         PlayerPrefs.Save();
-        base.OnExit();
-        GameManager.GameResume();
         stateMachine.TransitionToNextState();
     }
 }

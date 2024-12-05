@@ -1,14 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EndingState : State
+public abstract class EndingState : State
 {
-    public GameObject restartButtonGo;
-    public Button restartButton;
+    public Button button;
 
+    private void OnEnable()
+    {
+        button.onClick.AddListener(OnButtonClicked);
+    }
+    private void OnDisable()
+    {
+        button.onClick.RemoveListener(OnButtonClicked);
+    }
     public override void OnEnter()
     {
         base.OnEnter();
@@ -18,12 +23,5 @@ public class EndingState : State
     {
         base.OnExit();
     }
-
-    public void OnRestartButtonClicked()
-    {
-        PlayerPrefs.SetInt("inGameRestarted", 1);
-        PlayerPrefs.Save();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameManager.GameResume();
-    }
+    public abstract void OnButtonClicked();
 }

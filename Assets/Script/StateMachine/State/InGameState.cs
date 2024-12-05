@@ -10,6 +10,7 @@ public class InGameState : State
     {
         base.OnEnter();
         base.ballController.RBActiveControl(true);
+        GameManager.GameResume();
     }
     public override void OnExit()
     {

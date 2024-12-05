@@ -27,17 +27,17 @@ public class BallController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "CircleController")
-        {
-            stateMachine.TransitionToNextState();
-        }
+        //if (collision.gameObject.tag == "CircleController")
+        //{
+        //    stateMachine.TransitionToNextState();
+        //}
         if (collision.gameObject.tag == "die")
         {
-            stateMachine.TransitionToNextState();
+            stateMachine.TransitionToSpecificState(3);
         }
-        if (collision.gameObject.tag == "win")
+        else if (collision.gameObject.tag == "win")
         {
-            stateMachine.TransitionToNextState();
+            stateMachine.TransitionToSpecificState(2);
         }
     }
      void OnTriggerEnter(Collider other)
