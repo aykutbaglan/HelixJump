@@ -16,7 +16,6 @@ public class OyunKontrol : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         GuncelleHighScoreText();
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("points"))
@@ -32,7 +31,6 @@ public class OyunKontrol : MonoBehaviour
             }
         }
     }
-
     void GuncelleScoreText()
     {
         scoreText.text = "Score: " + score;
