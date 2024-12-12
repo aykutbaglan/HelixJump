@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public abstract class EndingState : State
 {
     public Button button;
+    [SerializeField] private InputController inputController;
+    [SerializeField] private WinState winState;
+    [SerializeField] private LoseState loseState;
 
     private void OnEnable()
     {
@@ -18,6 +21,10 @@ public abstract class EndingState : State
     {
         base.OnEnter();
         base.ballController.RBActiveControl(false);
+        if (loseState.canvasGroup.alpha == 1)
+        {
+            inputController.CanvasDisable();
+        }
     }
     public override void OnExit()
     {

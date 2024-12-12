@@ -17,6 +17,7 @@ public class StateMachine : MonoBehaviour
         else
         {
             // TO-DO[] In Game State YOK!
+            PlayerPrefs.SetInt("isGameRestarted",0);
             TransitionToNextState();
         }
     }

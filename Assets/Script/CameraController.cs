@@ -18,4 +18,8 @@ public class CameraController : MonoBehaviour
 
         transform.position = current; 
     }
+    public void ResetCameraTarget()
+    {
+        transform.position = target.position + offset;
+    }
 }

@@ -9,9 +9,8 @@ public class BallController : MonoBehaviour
     public Text scoreText;
     [SerializeField] private Rigidbody myRigidbody;
     [SerializeField] private Vector2 velocityLimitMinMax;
-    //[SerializeField] private GameObject losePanel;
-    //[SerializeField] private GameObject winPanel;
     [SerializeField] private StateMachine stateMachine;
+    [SerializeField] private InputController inputController;
     private int score;
 
     private void Start()
@@ -34,10 +33,12 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.tag == "die")
         {
             stateMachine.TransitionToSpecificState(3);
+            inputController.CanvasDisable();
         }
         else if (collision.gameObject.tag == "win")
         {
             stateMachine.TransitionToSpecificState(2);
+            inputController.CanvasDisable();
         }
     }
      void OnTriggerEnter(Collider other)
