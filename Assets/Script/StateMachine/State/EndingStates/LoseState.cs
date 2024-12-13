@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LoseState : EndingState
 {
@@ -9,17 +8,18 @@ public class LoseState : EndingState
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private ResetLevel resetLevel;
     [SerializeField] private CameraController cameraController;
+    [SerializeField] private InputController inputController;
+    [SerializeField] private ScoreManager scoreManager;
     public bool isRestarting = false;
     public override void OnButtonClicked()
     {
-       // isRestarting = true;
-
         PlayerPrefs.SetInt("isGameRestarted", 1);
         PlayerPrefs.Save();
         stateMachine.TransitionToSpecificState(1);
-        //base.OnEnter();
+        scoreManager.score = 0;
+        scoreManager.UpdateScoreText();
         resetLevel.ResetBallPosition();
         cameraController.ResetCameraTarget();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        inputController.CanvasEnable();
     }
 }

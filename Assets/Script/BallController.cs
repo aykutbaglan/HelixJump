@@ -6,17 +6,18 @@ using UnityEngine.UI;
 
 public class BallController : MonoBehaviour
 {
-    public Text scoreText;
+    //public Text scoreText;
     [SerializeField] private Rigidbody myRigidbody;
     [SerializeField] private Vector2 velocityLimitMinMax;
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private InputController inputController;
-    private int score;
+    [SerializeField] private ScoreManager scoreManager;
+    //private int score;
 
     private void Start()
     {
-        score = 0;
-        scoreText.text = "Score : " + score;
+        //score = 0;
+        //scoreText.text = "Score : " + score;
     }
     private void FixedUpdate()
     {
@@ -26,10 +27,6 @@ public class BallController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.tag == "CircleController")
-        //{
-        //    stateMachine.TransitionToNextState();
-        //}
         if (collision.gameObject.tag == "die")
         {
             stateMachine.TransitionToSpecificState(3);
@@ -45,8 +42,14 @@ public class BallController : MonoBehaviour
     {
         if (other.CompareTag("points"))
         {
-            score++;
-            scoreText.text = "Score : " + score;
+            scoreManager.score++;
+            scoreManager.UpdateScoreText();
+            if (scoreManager.score > scoreManager.highScore)
+            {
+                scoreManager.highScore = scoreManager.score;
+                PlayerPrefs.SetInt("HighScore", scoreManager.highScore);
+                scoreManager.UpdateHighScoreText();
+            }
         }
     }
     public void RBActiveControl(bool IsGravity)
