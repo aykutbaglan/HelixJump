@@ -11,7 +11,7 @@ public class InputController : MonoBehaviour, IDragHandler
     {
         var rotation = main.rotation;
         var current = rotation.eulerAngles.y;
-        current += eventData.delta.x * speed;
+        current += eventData.delta.x * -speed;
         rotation.eulerAngles = new Vector3(0, current, 0);
         main.rotation = rotation;
     }
