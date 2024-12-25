@@ -12,6 +12,8 @@ public class BallController : MonoBehaviour
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private InputController inputController;
     [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private ObjectPoolTest objectPoolTest;
+    [SerializeField] private ObjectPool objectPool;
     //private int score;
 
     private void Start()
@@ -31,6 +33,8 @@ public class BallController : MonoBehaviour
         {
             stateMachine.TransitionToSpecificState(3);
             inputController.CanvasDisable();
+            objectPoolTest.StopSpawned();
+            objectPool.StopMoving();
         }
         else if (collision.gameObject.tag == "win")
         {

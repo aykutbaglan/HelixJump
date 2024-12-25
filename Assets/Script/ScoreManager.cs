@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private Text scoreText;
     [SerializeField] private Text highScoreText;
+    [SerializeField] private ObjectPool objectPool;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScoreText()
     {
         scoreText.text = "Score : " + score;
+        objectPool.ResetPosCylinder();
     }
     public void UpdateHighScoreText()
     {

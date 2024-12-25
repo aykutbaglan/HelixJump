@@ -6,6 +6,16 @@ public class CircleController : MonoBehaviour
     public Text scoreText;
     public int score;
     public List<GameObject> pieces;
+    public float moveSpeed = 5f;
+
+    [SerializeField] private ObjectPool objectPool;
+
+
+    private void Update()
+    {
+        Debug.Log($"Time Scale = {Time.timeScale}");
+        transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+    }
 
     public void PrepareSimple(int nonactiveAmount)
     {
@@ -17,7 +27,9 @@ public class CircleController : MonoBehaviour
             item.SetActive(false);
             index++;
             if (index >= pieces.Count)
+            {
                 index = 0;
+            }
         }
     }
     public void UpdateScore()

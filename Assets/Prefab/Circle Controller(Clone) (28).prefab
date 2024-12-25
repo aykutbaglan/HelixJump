@@ -71,23 +71,8 @@ MonoBehaviour:
   - {fileID: 195327268574726928}
   - {fileID: 195327268368987701}
   - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
-  - {fileID: 195327268474350170}
+  moveSpeed: 5
+  objectPool: {fileID: 0}
 --- !u!1 &195327268009857993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,7 +2781,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195327268535942108}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2809,7 +2794,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5e93aa0e661e6f94e8016a10ef97a0fc, type: 2}
+  - {fileID: 2100000, guid: 128ff8439414ca84fa7bc38ee48757f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5561,7 +5546,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195327269617910529}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5574,7 +5559,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5e93aa0e661e6f94e8016a10ef97a0fc, type: 2}
+  - {fileID: 2100000, guid: 128ff8439414ca84fa7bc38ee48757f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6667,7 +6652,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195327270007280213}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6680,7 +6665,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5e93aa0e661e6f94e8016a10ef97a0fc, type: 2}
+  - {fileID: 2100000, guid: 128ff8439414ca84fa7bc38ee48757f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

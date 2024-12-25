@@ -8,6 +8,8 @@ public class StartState : State
     public Button startButton;
     [SerializeField] private ScoreCanvas scoreCanvas;
     [SerializeField] private StateMachine stateMachine;
+    [SerializeField] private ObjectPool objectPool;
+    [SerializeField] private ObjectPoolTest objectPoolTest;
 
 
     private void OnEnable()
@@ -21,6 +23,7 @@ public class StartState : State
     public override void OnEnter()
     {
         base.OnEnter();
+        GameManager.GamePause();
         base.ballController.RBActiveControl(false);
     }
     public override void OnExit()
@@ -31,6 +34,9 @@ public class StartState : State
     {
         PlayerPrefs.SetInt("isGameStarted",1);
         PlayerPrefs.Save();
+        objectPool.StartMoving();
+        objectPoolTest.StartSpawned();
         stateMachine.TransitionToNextState();
+
     }
 }

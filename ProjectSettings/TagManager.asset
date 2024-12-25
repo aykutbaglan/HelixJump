@@ -9,6 +9,7 @@ TagManager:
   - points
   - win
   - ball
+  - TopCollider
   layers:
   - Default
   - TransparentFX

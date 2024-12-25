@@ -5,12 +5,16 @@ using UnityEngine;
 public class InGameState : State
 {
     [SerializeField] private StateMachine stateMachine;
+    [SerializeField] private ObjectPool objectPool;
+    [SerializeField] private ObjectPoolTest objectPoolTest;
 
     public override void OnEnter()
     {
         base.OnEnter();
         base.ballController.RBActiveControl(true);
         GameManager.GameResume();
+        objectPool.StartMoving();
+        objectPoolTest.StartSpawned();
     }
     public override void OnExit()
     {

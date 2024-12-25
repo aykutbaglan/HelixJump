@@ -17,7 +17,7 @@ public class CylinderSpawner : MonoBehaviour
     {
         for (int i = 0; i < 37; i++)
         {
-            CreateNewCylinder();
+            //CreateNewCylinder();
         }
     }
 

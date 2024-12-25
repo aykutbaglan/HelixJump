@@ -10,6 +10,8 @@ public class LoseState : EndingState
     [SerializeField] private CameraController cameraController;
     [SerializeField] private InputController inputController;
     [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private ObjectPoolTest objectPoolTest;
+    [SerializeField] private ObjectPool objectPool;
     public bool isRestarting = false;
     public override void OnButtonClicked()
     {
@@ -21,5 +23,7 @@ public class LoseState : EndingState
         resetLevel.ResetBallPosition();
         cameraController.ResetCameraTarget();
         inputController.CanvasEnable();
+        objectPoolTest.StartSpawned();
+        objectPool.StartMoving();
     }
 }
