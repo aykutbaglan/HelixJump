@@ -6,7 +6,7 @@ public class CircleController : MonoBehaviour
     public Text scoreText;
     public int score;
     public List<GameObject> pieces;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 25f;
 
     [SerializeField] private ObjectPool objectPool;
 
