@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class BallController : MonoBehaviour
 {
-    //public Text scoreText;
     [SerializeField] private Rigidbody myRigidbody;
     [SerializeField] private Vector2 velocityLimitMinMax;
     [SerializeField] private StateMachine stateMachine;
@@ -14,13 +13,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private ObjectPoolTest objectPoolTest;
     [SerializeField] private ObjectPool objectPool;
-    //private int score;
 
-    private void Start()
-    {
-        //score = 0;
-        //scoreText.text = "Score : " + score;
-    }
     private void FixedUpdate()
     {
         var vertical = myRigidbody.velocity;
@@ -36,15 +29,7 @@ public class BallController : MonoBehaviour
             objectPoolTest.StopSpawned();
             objectPool.StopMoving();
         }
-        //else if (collision.gameObject.tag == "win")
-        //{
-        //    stateMachine.TransitionToSpecificState(2);
-        //    inputController.CanvasDisable();
-        //}
-    }
-     void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("points"))
+        if (collision.gameObject.tag == "points")
         {
             scoreManager.score++;
             scoreManager.UpdateScoreText();

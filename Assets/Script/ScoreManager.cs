@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScoreText()
     {
         scoreText.text = "Score : " + score;
-        objectPool.ResetPosCylinder();
+        //objectPool.ResetPosCylinder();
     }
     public void UpdateHighScoreText()
     {

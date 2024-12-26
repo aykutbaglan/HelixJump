@@ -23,7 +23,6 @@ public class CircleManager : MonoBehaviour
             current.transform.position = new Vector3(0, i * verticalDistance, 0);
            // var random = Random.Range(2, 5);
             current.PrepareSimple();
-            Debug.Log("bbbbbbbbbbbbbbbbbbbbbb");
 
         }
     }

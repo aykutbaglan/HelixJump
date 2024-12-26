@@ -5,13 +5,13 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public GameObject objectPrefab;
+    public Transform cylinderSpawnTransform;
     [SerializeField] private int poolSize;
     [SerializeField] private ObjectPoolTest objectPoolTest;
     [SerializeField] private StartState startState;
     [SerializeField] private Transform cylinderStartTransform;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private float verticalDistance = 25;
-    [SerializeField] private Transform cylinderSpawnTransform;
     private Queue<GameObject> pooledObjects;
 
     private bool isMoving = false;
@@ -43,6 +43,7 @@ public class ObjectPool : MonoBehaviour
             //var random = Random.Range(2, 5);
             CircleController circleController = createObject.GetComponent<CircleController>();
             circleController.PrepareSimple();
+            circleController.objectPool = this;
         }
     }
 
@@ -55,10 +56,11 @@ public class ObjectPool : MonoBehaviour
     }
     public void ResetPosCylinder()
     {
-        if (scoreManager.score >= 3)
-        {
-            transform.position = cylinderStartTransform.position;
-        }
+
+        //if (scoreManager.score >= 3)
+        //{
+        //    transform.position = cylinderStartTransform.position;
+        //}
     }
 
     public GameObject GetPooledObject()
