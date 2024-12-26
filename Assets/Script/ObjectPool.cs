@@ -42,7 +42,7 @@ public class ObjectPool : MonoBehaviour
             createObject.transform.localPosition = new Vector3(0, i * verticalDistance, 0);
             //var random = Random.Range(2, 5);
             CircleController circleController = createObject.GetComponent<CircleController>();
-            circleController.PrepareSimple(3);
+            circleController.PrepareSimple();
         }
     }
 

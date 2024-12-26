@@ -36,11 +36,11 @@ public class BallController : MonoBehaviour
             objectPoolTest.StopSpawned();
             objectPool.StopMoving();
         }
-        else if (collision.gameObject.tag == "win")
-        {
-            stateMachine.TransitionToSpecificState(2);
-            inputController.CanvasDisable();
-        }
+        //else if (collision.gameObject.tag == "win")
+        //{
+        //    stateMachine.TransitionToSpecificState(2);
+        //    inputController.CanvasDisable();
+        //}
     }
      void OnTriggerEnter(Collider other)
     {

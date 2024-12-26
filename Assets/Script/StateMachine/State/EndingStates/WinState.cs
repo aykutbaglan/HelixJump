@@ -7,6 +7,6 @@ public class WinState : EndingState
 {
     public override void OnButtonClicked()
     {
-        GameManager.NextButtonSceenLoad();
+        //GameManager.NextButtonSceenLoad();
     }
 }

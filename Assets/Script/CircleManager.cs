@@ -21,8 +21,10 @@ public class CircleManager : MonoBehaviour
         {
             var current = Instantiate(circlePrefab);
             current.transform.position = new Vector3(0, i * verticalDistance, 0);
-            var random = Random.Range(2, 5);
-            current.PrepareSimple(random);
+           // var random = Random.Range(2, 5);
+            current.PrepareSimple();
+            Debug.Log("bbbbbbbbbbbbbbbbbbbbbb");
+
         }
     }
     private GameObject CreateCircleFromPiece()

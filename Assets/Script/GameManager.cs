@@ -13,20 +13,9 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
     }
-    public static void LoadNextSceen()
-    {
-        int endSceneIndex = SceneManager.sceneCount - 1;
-        int currentSceenIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceenIndex = currentSceenIndex + 1;
 
-        if (nextSceenIndex > endSceneIndex)
-        {
-            nextSceenIndex = 0;
-        }
-        SceneManager.LoadScene(nextSceenIndex);
-    }
-    public static void NextButtonSceenLoad()
+    public static void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

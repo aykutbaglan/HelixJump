@@ -17,20 +17,25 @@ public class CircleController : MonoBehaviour
         transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
     }
 
-    public void PrepareSimple(int nonactiveAmount)
+    public void PrepareSimple()
     {
-        int index = Random.Range(0, pieces.Count);
+        float rotY = Random.Range(0f, 270f);
+        transform.Rotate(0f, rotY, 0f);
 
-        for (int i = 0; i < nonactiveAmount; i++)
-        {
-            var item = pieces[index];
-            item.SetActive(false);
-            index++;
-            if (index >= pieces.Count)
-            {
-                index = 0;
-            }
-        }
+        //int index = Random.Range(0, pieces.Count);
+
+        //for (int i = 0; i < nonactiveAmount; i++)
+        //{
+        //    var item = pieces[index];
+        //    item.SetActive(false);
+        //    index++;
+        //    if (index >= pieces.Count)
+        //    {
+        //        index = 0;
+        //    }
+        //}
+
+
     }
     public void UpdateScore()
     {

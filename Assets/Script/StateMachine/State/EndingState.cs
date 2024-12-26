@@ -20,6 +20,7 @@ public abstract class EndingState : State
     public override void OnEnter()
     {
         base.OnEnter();
+        GameManager.GamePause();
         base.ballController.RBActiveControl(false);
         if (loseState.canvasGroup.alpha == 1)
         {

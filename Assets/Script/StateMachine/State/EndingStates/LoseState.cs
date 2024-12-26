@@ -25,5 +25,6 @@ public class LoseState : EndingState
         inputController.CanvasEnable();
         objectPoolTest.StartSpawned();
         objectPool.StartMoving();
+        GameManager.RestartGame();
     }
 }
