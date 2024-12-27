@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class StartState : State
 {
     public Button startButton;
-    [SerializeField] private ScoreCanvas scoreCanvas;
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private ObjectPool objectPool;
     [SerializeField] private ObjectPoolTest objectPoolTest;
@@ -34,7 +33,6 @@ public class StartState : State
     {
         PlayerPrefs.SetInt("isGameStarted",1);
         PlayerPrefs.Save();
-        objectPool.StartMoving();
         objectPoolTest.StartSpawned();
         stateMachine.TransitionToNextState();
 

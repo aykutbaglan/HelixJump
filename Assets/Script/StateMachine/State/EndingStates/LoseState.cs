@@ -8,7 +8,6 @@ public class LoseState : EndingState
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private ResetLevel resetLevel;
     [SerializeField] private CameraController cameraController;
-    [SerializeField] private InputController inputController;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private ObjectPoolTest objectPoolTest;
     [SerializeField] private ObjectPool objectPool;
@@ -24,7 +23,6 @@ public class LoseState : EndingState
         cameraController.ResetCameraTarget();
         inputController.CanvasEnable();
         objectPoolTest.StartSpawned();
-        objectPool.StartMoving();
         GameManager.RestartGame();
     }
 }

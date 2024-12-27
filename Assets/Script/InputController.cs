@@ -15,7 +15,6 @@ public class InputController : MonoBehaviour, IDragHandler
         rotation.eulerAngles = new Vector3(0, current, 0);
         main.rotation = rotation;
     }
-
     public void CanvasEnable()
     {
         _canvasGroup.alpha = 1f;

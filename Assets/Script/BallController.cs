@@ -27,7 +27,7 @@ public class BallController : MonoBehaviour
             stateMachine.TransitionToSpecificState(3);
             inputController.CanvasDisable();
             objectPoolTest.StopSpawned();
-            objectPool.StopMoving();
+            //objectPool.StopMoving();
         }
         if (collision.gameObject.tag == "points")
         {

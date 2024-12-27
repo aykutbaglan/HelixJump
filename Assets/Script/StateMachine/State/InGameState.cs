@@ -13,7 +13,6 @@ public class InGameState : State
         base.OnEnter();
         base.ballController.RBActiveControl(true);
         GameManager.GameResume();
-        objectPool.StartMoving();
         objectPoolTest.StartSpawned();
     }
     public override void OnExit()

@@ -1,12 +1,12 @@
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public abstract class EndingState : State
 {
     public Button button;
-    [SerializeField] private InputController inputController;
-    [SerializeField] private WinState winState;
+    public InputController inputController;
     [SerializeField] private LoseState loseState;
 
     private void OnEnable()

@@ -8,12 +8,11 @@ public class ObjectPoolTest : MonoBehaviour
     [SerializeField] private float spawnInterval = 1;
     [SerializeField] private ObjectPool objectPool = null;
     [SerializeField] protected Vector3 spawnStartPosition = Vector3.zero;
-    private float currentYOffset;
+    //private float currentYOffset;
     private bool isspawning = false;
     private void Start()
     {
-        currentYOffset = 0f;
-
+        //currentYOffset = 0f;
     }
     public void StartSpawned()
     {

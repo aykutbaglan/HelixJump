@@ -14,23 +14,9 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private float verticalDistance = 25;
     private Queue<GameObject> pooledObjects;
 
-    private bool isMoving = false;
-
     private void Awake()
     {
         pooledObjects = new Queue<GameObject>();
-
-        //for(int i = 0; i < poolSize; i++)
-        //{
-           
-        //    GameObject obj = Instantiate(objectPrefab,objectPoolTest.parentObject);
-        //    obj.SetActive(true);
-
-
-        //    pooledObjects.Enqueue(obj);
-
-            
-        //}
         Create(poolSize);
     }
 
@@ -46,23 +32,6 @@ public class ObjectPool : MonoBehaviour
             circleController.objectPool = this;
         }
     }
-
-    private void Update()
-    {
-        if (isMoving)
-        {
-            //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
-        }
-    }
-    public void ResetPosCylinder()
-    {
-
-        //if (scoreManager.score >= 3)
-        //{
-        //    transform.position = cylinderStartTransform.position;
-        //}
-    }
-
     public GameObject GetPooledObject()
     {
         GameObject obj = pooledObjects.Dequeue();
@@ -72,13 +41,5 @@ public class ObjectPool : MonoBehaviour
 
         return obj;
     }
-    
-    public void StartMoving()
-    {
-        isMoving = true;
-    }
-    public void StopMoving()
-    {
-        isMoving = false;
-    }
+
 }
