@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class CircleController : MonoBehaviour
@@ -8,21 +9,57 @@ public class CircleController : MonoBehaviour
     public List<GameObject> pieces;
     public float moveSpeed = 25f;
     public ObjectPool objectPool;
+    [SerializeField] private Material[] materials;
+    [SerializeField] private Renderer[] cylinderRenderer;
+    [SerializeField] private float speedIncreaseMultiply = 0.5f;
+    [SerializeField] private float maxSpeed = 25;
+    private int currentMaterialIndex = 0;
 
+    private void Start()
+    {
+        if (materials.Length > 0)
+        {
+            ApplyMaterial(currentMaterialIndex);
+        }
+    }
     private void Update()
     {
+        Movement();
+    }
+    private void Movement()
+    {
+        if (moveSpeed < maxSpeed)
+        {
+            moveSpeed += speedIncreaseMultiply * Time.deltaTime;
+        }
         transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "TopCollider")
         {
-             transform.position = objectPool.cylinderSpawnTransform.position; 
+            transform.position = objectPool.cylinderSpawnTransform.position;
+
+            currentMaterialIndex++;
+            if (currentMaterialIndex >= materials.Length)
+            {
+                currentMaterialIndex = 0;
+            }
+            ApplyMaterial(currentMaterialIndex);            
         }        
+    }
+    private void ApplyMaterial(int index)
+    {
+        Material[] newMaterials = new Material[1];
+        newMaterials[0] = materials[index];
+        foreach (var item in cylinderRenderer)
+        {
+            item.materials = newMaterials;
+        }
     }
     public void PrepareSimple()
     {
-        float rotY = Random.Range(0f, 270f);
+        float rotY = UnityEngine.Random.Range(0f, 330f);
         transform.Rotate(0f, rotY, 0f);
     }
     public void UpdateScore()

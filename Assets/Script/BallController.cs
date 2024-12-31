@@ -1,9 +1,4 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-
+﻿using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [SerializeField] private Rigidbody myRigidbody;
@@ -12,7 +7,6 @@ public class BallController : MonoBehaviour
     [SerializeField] private InputController inputController;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private ObjectPoolTest objectPoolTest;
-    [SerializeField] private ObjectPool objectPool;
 
     private void FixedUpdate()
     {
@@ -27,7 +21,6 @@ public class BallController : MonoBehaviour
             stateMachine.TransitionToSpecificState(3);
             inputController.CanvasDisable();
             objectPoolTest.StopSpawned();
-            //objectPool.StopMoving();
         }
         if (collision.gameObject.tag == "points")
         {

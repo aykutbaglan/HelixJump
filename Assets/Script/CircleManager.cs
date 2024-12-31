@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-using Random = UnityEngine.Random;
-
+﻿using UnityEngine;
 public class CircleManager : MonoBehaviour
 {
     [SerializeField] private GameObject piecePrefab;
@@ -21,7 +18,6 @@ public class CircleManager : MonoBehaviour
         {
             var current = Instantiate(circlePrefab);
             current.transform.position = new Vector3(0, i * verticalDistance, 0);
-           // var random = Random.Range(2, 5);
             current.PrepareSimple();
 
         }
