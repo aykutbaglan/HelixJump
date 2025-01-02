@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 318990702}
   - component: {fileID: 318990706}
+  - component: {fileID: 318990707}
   m_Layer: 0
   m_Name: CylinderSpawner
   m_TagString: Untagged
@@ -251,6 +252,18 @@ MonoBehaviour:
   cylinderSpawnTransform: {fileID: 318990702}
   poolSize: 4
   verticalDistance: 22
+--- !u!114 &318990707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318990701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188259a1cefc3844ea00fdf038b07c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349640592
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +512,7 @@ MonoBehaviour:
   stateMachine: {fileID: 2138056357}
   inputController: {fileID: 1310606395}
   scoreManager: {fileID: 876712823}
-  objectPoolTest: {fileID: 963194230}
+  objectPoolTest: {fileID: 318990707}
 --- !u!1 &678822891
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +919,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -993,18 +1005,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 434830439}
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 188259a1cefc3844ea00fdf038b07c52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &974478159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   stateMachine: {fileID: 2138056357}
   cameraController: {fileID: 963194229}
   scoreManager: {fileID: 876712823}
-  objectPoolTest: {fileID: 963194230}
+  objectPoolTest: {fileID: 318990707}
   objectPool: {fileID: 318990706}
 --- !u!1 &1045306272
 GameObject:
@@ -1781,7 +1781,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24114
+  m_Name: pb_Mesh24104
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   startButton: {fileID: 1556450115}
   stateMachine: {fileID: 2138056357}
   objectPool: {fileID: 318990706}
-  objectPoolTest: {fileID: 963194230}
+  objectPoolTest: {fileID: 318990707}
 --- !u!1 &1923130635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,7 +2450,7 @@ MonoBehaviour:
   ballController: {fileID: 434830440}
   stateMachine: {fileID: 2138056357}
   objectPool: {fileID: 318990706}
-  objectPoolTest: {fileID: 963194230}
+  objectPoolTest: {fileID: 318990707}
 --- !u!1 &1993292540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5985,7 +5985,6 @@ MonoBehaviour:
   states:
   - {fileID: 1785491778}
   - {fileID: 1923130637}
-  - {fileID: 0}
   - {fileID: 982383493}
 --- !u!114 &2138056358
 MonoBehaviour:

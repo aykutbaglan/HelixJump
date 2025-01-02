@@ -18,7 +18,7 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.tag == "die")
         {
-            stateMachine.TransitionToSpecificState(3);
+            stateMachine.TransitionToSpecificState(2);
             inputController.CanvasDisable();
             objectPoolTest.StopSpawned();
         }

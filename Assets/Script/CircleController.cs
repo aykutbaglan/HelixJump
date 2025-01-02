@@ -40,6 +40,9 @@ public class CircleController : MonoBehaviour
         {
             transform.position = objectPool.cylinderSpawnTransform.position;
 
+            float randomYRotation = UnityEngine.Random.Range(0f, 330f);
+            transform.rotation = Quaternion.Euler(0, randomYRotation, 0);
+
             currentMaterialIndex++;
             if (currentMaterialIndex >= materials.Length)
             {
