@@ -7,8 +7,6 @@ public class StartState : State
     [SerializeField] private StateMachine stateMachine;
     [SerializeField] private ObjectPool objectPool;
     [SerializeField] private ObjectPoolTest objectPoolTest;
-
-
     private void OnEnable()
     {
         startButton.onClick.AddListener(OnStartButtonClicked);
@@ -33,6 +31,5 @@ public class StartState : State
         PlayerPrefs.Save();
         objectPoolTest.StartSpawned();
         stateMachine.TransitionToNextState();
-
     }
 }

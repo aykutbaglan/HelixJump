@@ -19,7 +19,6 @@ public class CircleManager : MonoBehaviour
             var current = Instantiate(circlePrefab);
             current.transform.position = new Vector3(0, i * verticalDistance, 0);
             current.PrepareSimple();
-
         }
     }
     private GameObject CreateCircleFromPiece()

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,8 +7,8 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     public int highScore;
 
-    [SerializeField] private Text scoreText;
-    [SerializeField] private Text highScoreText;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private ObjectPool objectPool;
 
     private void Start()
@@ -18,11 +19,10 @@ public class ScoreManager : MonoBehaviour
     
     public void UpdateScoreText()
     {
-        scoreText.text = "Score : " + score;
-        //objectPool.ResetPosCylinder();
+        scoreText.text = "Score:" + score;
     }
     public void UpdateHighScoreText()
     {
-        highScoreText.text = "HighScore : " + highScore;
+        highScoreText.text = "High Score:" + highScore;
     }
 }
