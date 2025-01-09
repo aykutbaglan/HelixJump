@@ -5,7 +5,7 @@ This project is a clone of the popular mobile game Helix Jump, developed using U
 
 <br>
 <p align = "center"">
-<img src = "Screenshots/Start-Menu.jpg" alt = "In-Game width="540" height="960"/>
+<img src = "Screenshots/Startgame-Menu.jpg" alt = "In-Game width="540" height="960"/>
 </p>
 <br>
 
