@@ -7,6 +7,8 @@ public class BallController : MonoBehaviour
     [SerializeField] private InputController inputController;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private ObjectPoolTest objectPoolTest;
+    [SerializeField] private AudioSource pointSfx;
+    [SerializeField] private AudioSource dieSfx;
 
     private void FixedUpdate()
     {
@@ -18,12 +20,14 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.tag == "die")
         {
+            dieSfx.Play();
             stateMachine.TransitionToSpecificState(2);
             inputController.CanvasDisable();
             objectPoolTest.StopSpawned();
         }
         if (collision.gameObject.tag == "points")
         {
+            pointSfx.Play();
             scoreManager.score++;
             scoreManager.UpdateScoreText();
             if (scoreManager.score > scoreManager.highScore)
